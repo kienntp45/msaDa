@@ -1,0 +1,82 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Basket Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildBasketApi",
+            "program": "${workspaceFolder}/Basket/Basket.API/bin/Debug/net6.0/Basket.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Basket/Basket.API",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Launch Product Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildProductApi",
+            "program": "${workspaceFolder}/Product/Product.API/bin/Debug/net6.0/Product.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Product/Product.API",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Launch Ordering Api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildOrderApi",
+            "program": "${workspaceFolder}/Ordering/Ordering.API/bin/Debug/net6.0/Ordering.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Ordering/Ordering.API",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "console": "externalTerminal"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch multi projects",
+            "configurations": ["Launch Product Api", "Launch Basket Api","Launch Ordering Api"]
+        }
+    ]
+}
